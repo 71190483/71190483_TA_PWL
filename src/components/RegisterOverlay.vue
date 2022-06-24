@@ -11,10 +11,9 @@
                         <v-icon @click="exitRegister">mdi-close</v-icon>
                     </v-card-title>
                     <div class="mx-auto px-6">
-                        <v-text-field label="Username" v-model="username"></v-text-field>
                         <v-text-field label="Email" v-model="email"></v-text-field>
                         <v-text-field label="Password" v-model="password" type="password"></v-text-field>
-                        <v-btn color="green" 
+                        <v-btn color="blue" 
                         @click="register" 
                         class="rounded-0 mb-2" 
                         width="100%"
@@ -39,7 +38,7 @@ export default {
     data:() =>({
         absolute: true,
         isLogin:false,
-        username:'',
+        
         email:'',
         password:''
     }),

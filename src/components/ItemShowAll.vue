@@ -21,8 +21,8 @@
                             </v-list-item>
                             <v-list-item>
                                 <v-rating
-                                background-color="indigo lighten-3"
-                                color="indigo"
+                                background-color="grey"
+                                color="grey"
                                 class="mx-16 px-8"
                                 small
                                 readonly
@@ -34,7 +34,7 @@
                         class="my-auto mx-16 px-16 justify-center"
                         tile
                         elevation="0">
-                            Add to Cart <v-icon>mdi-cart-plus</v-icon>
+                            Masukkan keranjang <v-icon>mdi-cart-plus</v-icon>
                         </v-btn>
                     </v-list>
                 </v-card>
@@ -65,11 +65,6 @@ export default {
             this.isiproducts=documents
         })
     },
-
-    // computed(){
-
-    // },
-
     methods: {
         ...mapActions(["addToCart"])
     },
@@ -77,9 +72,9 @@ export default {
 </script>
 <style>
  #btnCart:hover{
-    background-color: greenyellow;
+    background-color: purple;
  }
  #title{
-    font-size:medium;
+    font-size:200;
  }
 </style>

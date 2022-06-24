@@ -3,25 +3,24 @@
         <div>
             <v-overlay :value="overlay_val">
                 <v-sheet
-                    width="500"
+                    width="250"
                     class="my-auto pb-6"
-                    color="dark">
+                    color="red">
                     <v-card-title>Login
                         <v-spacer></v-spacer>
                         <v-icon @click="exitLogin">mdi-close</v-icon>
                     </v-card-title>
-                    
                     <div class="mx-auto px-6">
                         <v-text-field label="E-mail" v-model="email" placeholder="Enter Email">
                         </v-text-field>
                         <v-text-field label="Password" type="password" v-model="password"></v-text-field>
-                        <v-btn color="green" 
+                        <v-btn color="blue" 
                         @click="login" 
                         class="rounded-0 mb-2" 
                         width="100%"
                         outlined
                         :loading="loading">Login</v-btn>
-                        <v-btn @click="toregister"  width="100%" >Not have account? Register</v-btn>
+                        <v-btn @click="toregister"  width="100%" >Register Now !</v-btn>
                     </div>
                 </v-sheet>
             </v-overlay>
@@ -55,7 +54,7 @@ export default {
                 // this.$store.state.isLogin = true
                 // this.$store.state.email = this.email
                 this.$store.commit("loginState", {isLogin, email, password})
-                alert("Welcome "+ email)
+                alert("Selamat Datang "+ email + "!")
                 this.email = ""
                 this.password = ""
                 this.$router.push('/')

@@ -1,37 +1,37 @@
 <template>
   <v-app>
-    <v-app-bar app color="purple accent-2">
-      <v-toolbar-title class="myFont" @click="toHomePage">Toko Wibu</v-toolbar-title>
-      <v-spacer></v-spacer>
+    <v-app-bar app color="blue">
       <v-text-field 
       id="search-txt" 
-      label="Search" 
+      label="Cari disini" 
       class="pt-7"
       v-model="keyword"
       solo
-      rounded
+      square
       ></v-text-field>
       <v-btn v-on:click="search()" icon>
-        <v-icon color="white">mdi-magnify</v-icon>
+        <v-icon color="black">mdi-magnify</v-icon>
       </v-btn>
       <v-spacer></v-spacer>
+      <v-toolbar-title class="myFont" @click="toHomePage">RadenMas Motor Store</v-toolbar-title>
+      <v-spacer></v-spacer>
       <v-btn icon v-bind="attrs" v-on="on" @click="toCartPage">
-        <v-badge color="green"  
+        <v-badge color="grey"  
         :content="$store.getters.getIsiCart"
         small>
-          <v-icon color="white">mdi-cart</v-icon>
+          <v-icon color="purple">mdi-cart</v-icon>
         </v-badge>
       </v-btn>
       <div v-show="!this.$store.getters.loginTest">
         <v-btn id="btn-login"
         class="ma-auto mx-1 rounded-0" 
         @click="login"
-        color="green"
+        color="black"
         outlined>Masuk</v-btn>
         <v-btn id="btn-reg"
         class=" ma-auto mx-1 rounded-0"
         @click="register"
-        color="green"
+        color="black"
         outlined>Daftar</v-btn>
       </div>
       <div class="text-center mx-1"
@@ -147,7 +147,7 @@ export default {
     logout(){
       firebase.auth().signOut()
       .then(()=>{
-        alert("Log Out Berhasil, Goodbye "+this.$store.state.email)
+        alert("Byee, Have a nice day !! "+this.$store.state.email)
         localStorage.removeItem("email")
         localStorage.removeItem("password")
         var isLogin = !this.$store.state.isLogin

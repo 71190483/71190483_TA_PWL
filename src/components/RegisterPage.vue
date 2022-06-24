@@ -6,11 +6,6 @@
             <div class="mx-auto px-6">
                 <div>
                     <v-text-field 
-                    label="Username" 
-                    v-model="username" 
-                    solo
-                    id="inpRegis"></v-text-field>
-                    <v-text-field 
                     label="Email" 
                     v-model="email" 
                     solo
@@ -24,7 +19,7 @@
                 </div>
                 <v-card-action>
                     <v-btn @click="register" 
-                    color="green"
+                    color="blue"
                     class="rounded-0 mb-2"
                     width="100%"
                     outlined>Register</v-btn>
@@ -41,7 +36,6 @@ export default {
         register_val:Boolean
     },
     data:()=>({
-      username:'',
       email:'',
       password:''  
     }),
@@ -49,14 +43,13 @@ export default {
         register(){
             firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
             .then(() => {
-                alert("Register Bershasil "+this.email+" silahkan login")
-                this.username = ""
+                alert("Berhasil untuk registrasi "+this.email+" silahkan login")
                 this.email = ""
                 this.password = ""
                 this.$router.push('/')
             })
             .catch(err =>{
-                err.alert("Register Error")
+                err.alert("Gagal Registrasi")
             })
         },
     }

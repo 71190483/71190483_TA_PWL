@@ -61,22 +61,13 @@ export default {
         }
     },
     created(){
-        // db.collection('produk')
-        // .get()
-        // .then((querySnapshot)=>{
-        //     const documents = querySnapshot.docs.map((doc)=> doc.data())
-        //     this.prod_search=documents
-        // })
-        db.collection('produk')
+        db.collection('sparepart')
         .get()
         .then((querySnapshot)=>{
             const documents1 = querySnapshot.docs.map((doc)=>({id:doc.id, ...doc.data()}))
             this.products=documents1
             this.prod_search=documents1
         })
-        // db.collection('cart')
-        // .doc(localStorage.getItem('email'))
-        // .set()
     },
     computed:{
         hasilCari: function(){
